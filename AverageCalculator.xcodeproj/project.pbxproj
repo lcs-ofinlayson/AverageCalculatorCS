@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		81E92CD52994815500EDDBB4 /* AverageCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E92CD42994815500EDDBB4 /* AverageCalculatorApp.swift */; };
-		81E92CD72994815500EDDBB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E92CD62994815500EDDBB4 /* ContentView.swift */; };
 		81E92CD92994815700EDDBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E92CD82994815700EDDBB4 /* Assets.xcassets */; };
 		81E92CDC2994815700EDDBB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E92CDB2994815700EDDBB4 /* Preview Assets.xcassets */; };
+		81E92CE42994817000EDDBB4 /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E92CE32994817000EDDBB4 /* AverageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		81E92CD12994815500EDDBB4 /* AverageCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AverageCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E92CD42994815500EDDBB4 /* AverageCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalculatorApp.swift; sourceTree = "<group>"; };
-		81E92CD62994815500EDDBB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81E92CD82994815700EDDBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E92CDB2994815700EDDBB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81E92CE32994817000EDDBB4 /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				81E92CD42994815500EDDBB4 /* AverageCalculatorApp.swift */,
-				81E92CD62994815500EDDBB4 /* ContentView.swift */,
+				81E92CE22994816400EDDBB4 /* Views */,
 				81E92CD82994815700EDDBB4 /* Assets.xcassets */,
 				81E92CDA2994815700EDDBB4 /* Preview Content */,
 			);
@@ -65,6 +65,14 @@
 				81E92CDB2994815700EDDBB4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		81E92CE22994816400EDDBB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81E92CE32994817000EDDBB4 /* AverageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81E92CD72994815500EDDBB4 /* ContentView.swift in Sources */,
+				81E92CE42994817000EDDBB4 /* AverageView.swift in Sources */,
 				81E92CD52994815500EDDBB4 /* AverageCalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
