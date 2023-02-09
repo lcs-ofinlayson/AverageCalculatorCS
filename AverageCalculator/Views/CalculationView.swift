@@ -230,6 +230,7 @@ struct CalculationView: View {
                         Text("History")
                             .font(.title)
                             .fontWeight(.bold)
+                            .padding()
                         Spacer()
                     }
                     Group {
