@@ -11,7 +11,7 @@ struct CalculationView: View {
     
     
     // MARK: Stored properties
-    
+        
     @State var providedEnglishGrade = ""
     @State var providedChemistryGrade = ""
     @State var providedBiologyGrade = ""
@@ -20,7 +20,7 @@ struct CalculationView: View {
     @State var providedOutdoorEducationGrade = ""
     @State var providedKinisiologyGrade = ""
     @State var providedEconomicsGrade = ""
-    
+
     // MARK: Computed properties
     
     
@@ -112,8 +112,9 @@ struct CalculationView: View {
         guard economicsGrade != nil else {
             return 0
         }
-        let average = (englishGrade + biologyGrade + chemistryGrade + computerStudiesGrade + mathGrade + outdoorEducationGrade + kinisiologyGrade +
-                       economicsGrade) / 8
+        let average = (englishGrade! + biologyGrade! + chemistryGrade! + computerStudiesGrade! + mathGrade! + outdoorEducationGrade! + kinisiologyGrade! +
+        economicsGrade!) / 8
+        return average
     }
     
     
@@ -129,7 +130,7 @@ struct CalculationView: View {
                         Text("English")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedEnglishGrade)
@@ -141,7 +142,7 @@ struct CalculationView: View {
                         Text("Biology")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedBiologyGrade)
@@ -152,7 +153,7 @@ struct CalculationView: View {
                         Text("Chemistry")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedChemistryGrade)
@@ -164,7 +165,7 @@ struct CalculationView: View {
                         Text("Computer Studies")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedComputerScienceGrade)
@@ -175,7 +176,7 @@ struct CalculationView: View {
                         Text("Math")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedMathGrade)
@@ -186,7 +187,7 @@ struct CalculationView: View {
                         Text("Outdoor Education")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedOutdoorEducationGrade)
@@ -197,7 +198,7 @@ struct CalculationView: View {
                         Text("Kinesiology")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedKinisiologyGrade)
@@ -209,26 +210,29 @@ struct CalculationView: View {
                         Text("Economics")
                             .bold()
                             .padding()
-                        
+                       
                         Spacer()
                         
                         TextField("Grade Goes here", text: $providedEconomicsGrade)
                             .padding()
                     }
                     
+                    Text("Average =  \(average.formatted(.number.precision(.fractionLength(1)))) ")
+                        .font(.title2)
+                    
                     //History Button
                     
                     
-                }
+                                            }
                 Spacer()
-                
-            }
-            .navigationTitle("Average Calculator")
-        }
-    }
-}
-struct CalculationView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalculationView()
-    }
-}
+                                            
+                                        }
+                                        .navigationTitle("Average Calculator")
+                                    }
+                                }
+                            }
+                            struct CalculationView_Previews: PreviewProvider {
+                                static var previews: some View {
+                                    CalculationView()
+                                }
+                            }
