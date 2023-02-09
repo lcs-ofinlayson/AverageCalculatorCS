@@ -21,6 +21,61 @@ struct CalculationView: View {
     @State var providedKinisiologyGrade = ""
     @State var providedEconomicsGrade = ""
 
+    var englishGrade: Double? {
+        guard let englishGrade = Double(providedEnglishGrade) else {
+            return nil
+        }
+        return englishGrade
+    }
+    
+    var biologyGrade: Double? {
+        guard let biologyGrade = Double(providedBiologyGrade) else {
+            return nil
+        }
+        return biologyGrade
+    }
+    
+    var chemistryGrade: Double? {
+        guard let chemistryGrade = Double(providedChemistryGrade) else {
+            return nil
+        }
+        return chemistryGrade
+    }
+    
+    var computerStudiesGrade: Double? {
+        guard let computerStudiesGrade = Double(providedComputerScienceGrade) else {
+            return nil
+        }
+        return computerStudiesGrade
+    }
+    
+    var mathGrade: Double? {
+        guard let mathGrade = Double(providedMathGrade) else {
+            return nil
+        }
+        return mathGrade
+    }
+    
+    var outdoorEducationGrade: Double? {
+        guard let outdoorEducationGrade = Double(providedOutdoorEducationGrade) else {
+            return nil
+        }
+        return outdoorEducationGrade
+    }
+    
+    var kinisiologyGrade: Double? {
+        guard let kinisiologyGrade = Double(providedKinisiologyGrade) else {
+            return nil
+        }
+        return kinisiologyGrade
+    }
+    
+    var Grade: Double? {
+        guard let economicsGrade = Double(providedEconomicsGrade) else {
+            return nil
+        }
+        return economicsGrade
+    }
     
     // MARK: Computed properties
     
