@@ -224,7 +224,7 @@ struct CalculationView: View {
                         .font(.title2)
                     
                     //History Button
-                    Button("Add", action: { averageHistory.append(Average(value: average))
+                    Button("Save", action: { averageHistory.append(Average(value: average))
                         
                     })
                     HStack {
