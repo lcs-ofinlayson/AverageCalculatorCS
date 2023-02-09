@@ -120,7 +120,6 @@ struct CalculationView: View {
     
     
     var body: some View {
-        NavigationView{
             HStack {
                 
                 VStack(spacing:1){
@@ -244,7 +243,6 @@ struct CalculationView: View {
                         }
                         Spacer()
                     }
-                }
                 
                 
             }
@@ -257,6 +255,8 @@ struct CalculationView: View {
 
 struct CalculationView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculationView(averageHistory: [])
+        NavigationView{
+            CalculationView(averageHistory: [])
+        }
     }
 }
