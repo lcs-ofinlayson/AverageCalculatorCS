@@ -11,7 +11,9 @@ import SwiftUI
 struct AverageCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            AverageView()
+            NavigationView{
+                CalculationView()
+            }
         }
     }
 }
