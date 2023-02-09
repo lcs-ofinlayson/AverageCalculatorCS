@@ -12,7 +12,7 @@ struct AverageCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                CalculationView()
+                CalculationView(averageHistory: [])
             }
         }
     }

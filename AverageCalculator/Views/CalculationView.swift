@@ -11,7 +11,7 @@ struct CalculationView: View {
     
     
     // MARK: Stored properties
-        
+    
     @State var providedEnglishGrade = ""
     @State var providedChemistryGrade = ""
     @State var providedBiologyGrade = ""
@@ -20,7 +20,8 @@ struct CalculationView: View {
     @State var providedOutdoorEducationGrade = ""
     @State var providedKinisiologyGrade = ""
     @State var providedEconomicsGrade = ""
-
+    @State var averageHistory: [Average]
+    
     // MARK: Computed properties
     
     
@@ -113,7 +114,7 @@ struct CalculationView: View {
             return 0
         }
         let average = (englishGrade! + biologyGrade! + chemistryGrade! + computerStudiesGrade! + mathGrade! + outdoorEducationGrade! + kinisiologyGrade! +
-        economicsGrade!) / 8
+                       economicsGrade!) / 8
         return average
     }
     
@@ -125,115 +126,137 @@ struct CalculationView: View {
                 VStack(spacing:1){
                     
                     //All of the classes here
-                    
-                    HStack{
-                        Text("English")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
+                    Group {
                         
-                        TextField("Grade Goes here", text: $providedEnglishGrade)
-                            .padding()
+                        HStack{
+                            Text("English")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedEnglishGrade)
+                                .padding()
+                            
+                        }
+                        
+                        HStack{
+                            Text("Biology")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedBiologyGrade)
+                                .padding()
+                        }
+                        
+                        HStack{
+                            Text("Chemistry")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedChemistryGrade)
+                                .padding()
+                            
+                        }
+                        
+                        HStack{
+                            Text("Computer Studies")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedComputerScienceGrade)
+                                .padding()
+                        }
+                        
+                        HStack{
+                            Text("Math")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedMathGrade)
+                                .padding()
+                        }
+                        
+                        HStack{
+                            Text("Outdoor Education")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedOutdoorEducationGrade)
+                                .padding()
+                        }
+                        
+                        HStack{
+                            Text("Kinesiology")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedKinisiologyGrade)
+                                .padding()
+                            
+                        }
+                        
+                        HStack{
+                            Text("Economics")
+                                .bold()
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Grade Goes here", text: $providedEconomicsGrade)
+                                .padding()
+                        }
                         
                     }
-                    
-                    HStack{
-                        Text("Biology")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedBiologyGrade)
-                            .padding()
-                    }
-                    
-                    HStack{
-                        Text("Chemistry")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedChemistryGrade)
-                            .padding()
-                        
-                    }
-                    
-                    HStack{
-                        Text("Computer Studies")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedComputerScienceGrade)
-                            .padding()
-                    }
-                    
-                    HStack{
-                        Text("Math")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedMathGrade)
-                            .padding()
-                    }
-                    
-                    HStack{
-                        Text("Outdoor Education")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedOutdoorEducationGrade)
-                            .padding()
-                    }
-                    
-                    HStack{
-                        Text("Kinesiology")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedKinisiologyGrade)
-                            .padding()
-                        
-                    }
-                    
-                    HStack{
-                        Text("Economics")
-                            .bold()
-                            .padding()
-                       
-                        Spacer()
-                        
-                        TextField("Grade Goes here", text: $providedEconomicsGrade)
-                            .padding()
-                    }
-                    
                     Text("Average =  \(average.formatted(.number.precision(.fractionLength(1)))) ")
                         .font(.title2)
                     
                     //History Button
-                    
-                    
-                    
-                                            }
-                Spacer()
-                                            
-                                        }
-                                        .navigationTitle("Average Calculator")
-                                    }
-                                }
+                    Button("Add", action: { averageHistory.append(Average(value: average))
+                        
+                    })
+                    HStack {
+                        Text("History")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    Group {
+                        //The List of Results
+                        List(averageHistory.reversed()) { currentAverage in
+                            HStack {
+                                Spacer()
+                                AverageView(average: currentAverage)
+                                Spacer()
                             }
-                            struct CalculationView_Previews: PreviewProvider {
-                                static var previews: some View {
-                                    CalculationView()
-                                }
-                            }
+                        }
+                        Spacer()
+                    }
+                }
+                
+                
+            }
+            Spacer()
+            
+        }
+        .navigationTitle("Average Calculator")
+    }
+}
+
+struct CalculationView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalculationView(averageHistory: [])
+    }
+}
