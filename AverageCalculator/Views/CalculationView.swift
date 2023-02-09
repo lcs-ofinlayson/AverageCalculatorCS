@@ -223,6 +223,7 @@ struct CalculationView: View {
                     //History Button
                     
                     
+                    
                                             }
                 Spacer()
                                             
