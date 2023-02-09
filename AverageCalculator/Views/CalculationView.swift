@@ -39,7 +39,7 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        TextField("Grade Goes here", text: <#T##Binding<String>#>)
+                        TextField("Grade Goes here", text: $providedEnglishGrade)
                             .padding()
                         
                     }
@@ -51,9 +51,8 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedBiologyGrade)
                             .padding()
-                        
                     }
                     
                     HStack{
@@ -63,7 +62,7 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedChemistryGrade)
                             .padding()
                         
                     }
@@ -75,9 +74,8 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedComputerScienceGrade)
                             .padding()
-                        
                     }
                     
                     HStack{
@@ -87,9 +85,8 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedMathGrade)
                             .padding()
-                        
                     }
                     
                     HStack{
@@ -99,9 +96,8 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedOutdoorEducationGrade)
                             .padding()
-                        
                     }
                     
                     HStack{
@@ -111,7 +107,7 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedKinisiologyGrade)
                             .padding()
                         
                     }
@@ -123,9 +119,8 @@ struct CalculationView: View {
                        
                         Spacer()
                         
-                        Text("Grade Goes here")
+                        TextField("Grade Goes here", text: $providedEconomicsGrade)
                             .padding()
-                        
                     }
                     
                     //History Button
@@ -135,7 +130,7 @@ struct CalculationView: View {
                 Spacer()
                                             
                                         }
-                                        .navigationTitle("Share the Bill")
+                                        .navigationTitle("Average Calculator")
                                     }
                                 }
                             }
