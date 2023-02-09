@@ -10,7 +10,12 @@ import SwiftUI
 struct AverageView: View {
     var average: Average
     var body: some View {
-        Text("Average =  \(average.value.formatted(.number.precision(.fractionLength(1)))) ")
+        
+        VStack{
+            Text("\(average.occuredOn)")
+            Text("Average =  \(average.value.formatted(.number.precision(.fractionLength(1)))) ")
+        }
+        
     }
 }
 

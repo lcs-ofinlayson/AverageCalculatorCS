@@ -11,6 +11,7 @@ struct Average: Identifiable {
     
     let id = UUID()
     let value: Double
+    let occuredOn: Date = Date()
     
 }
 
